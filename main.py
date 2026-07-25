@@ -40,9 +40,21 @@ from collections import defaultdict
 # for key, value in grades.items():
 #     print(key + ":", ", ".join(value))
 
-line1 = input()
-line2 = input()
-nums1 = {int(x) for x in line1.split(" ")}
-nums2 = {int(x) for x in line2.split(" ")}
-intersection = sorted(nums1 & nums2)
-print(" ".join(map(str, intersection)))
+# line1 = input()
+# line2 = input()
+# nums1 = {int(x) for x in line1.split(" ")}
+# nums2 = {int(x) for x in line2.split(" ")}
+# intersection = sorted(nums1 & nums2)
+# print(" ".join(map(str, intersection)))
+
+
+def is_palindrome(sentence: str) -> bool:
+    sentence = sentence.lower().replace(" ", "").strip()
+    return sentence == sentence[::-1]
+
+
+sentence = input()
+if is_palindrome(sentence):
+    print("yes")
+else:
+    print("no")
