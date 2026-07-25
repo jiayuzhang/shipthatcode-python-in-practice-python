@@ -6,6 +6,15 @@ nums = [int(input()) for _ in range(n)]
 # nums.sort()
 # print(nums[-2])
 
-res = [x * 2 for x in nums if x % 2 == 0]
-for n in res:
-    print(n)
+# res = [x * 2 for x in nums if x % 2 == 0]
+# for n in res:
+#     print(n)
+
+
+def min_max(numbers) -> tuple[int, int]:
+    return min(numbers), max(numbers)
+
+
+mn, mx = min_max(nums)
+print(mn)
+print(mx)
