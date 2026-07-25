@@ -1,5 +1,7 @@
 from __future__ import annotations
 from collections import defaultdict
+import csv
+import io
 
 # n = int(input())
 # nums = [int(input()) for _ in range(n)]
@@ -93,19 +95,30 @@ from collections import defaultdict
 # except ValueError:
 #     print("invalid input")
 
+# n = int(input())
+
+# def validate_age(years):
+#     if years < 0:
+#         raise ValueError("age must be non-negative")
+#     if years > 150:
+#         raise ValueError("age too large")
+#     return years
+
+
+# try:
+#     validate_age(n)
+#     print("age ok")
+# except ValueError as e:
+#     print(e)
+
+lines = []
+lines.append(input())  # headers
 n = int(input())
-
-
-def validate_age(years):
-    if years < 0:
-        raise ValueError("age must be non-negative")
-    if years > 150:
-        raise ValueError("age too large")
-    return years
-
-
-try:
-    validate_age(n)
-    print("age ok")
-except ValueError as e:
-    print(e)
+for _ in range(n):
+    lines.append(input())
+csv_data = "\n".join(lines)
+reader = csv.DictReader(io.StringIO(csv_data))
+tot = 0
+for row in reader:
+    tot += float(row["score"])
+print(f"{tot / n:.2f}")
