@@ -30,12 +30,19 @@ from collections import defaultdict
 #     print(key, value)
 
 
-n = int(input())
-grades = defaultdict(list)
-for i in range(n):
-    text = input()  # Alice A
-    name, grade = text.split(" ")
-    grades[grade].append(name)
+# n = int(input())
+# grades = defaultdict(list)
+# for i in range(n):
+#     text = input()  # Alice A
+#     name, grade = text.split(" ")
+#     grades[grade].append(name)
 
-for key, value in grades.items():
-    print(key + ":", ", ".join(value))
+# for key, value in grades.items():
+#     print(key + ":", ", ".join(value))
+
+line1 = input()
+line2 = input()
+nums1 = {int(x) for x in line1.split(" ")}
+nums2 = {int(x) for x in line2.split(" ")}
+intersection = sorted(nums1 & nums2)
+print(" ".join(map(str, intersection)))
