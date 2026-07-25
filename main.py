@@ -48,13 +48,25 @@ from collections import defaultdict
 # print(" ".join(map(str, intersection)))
 
 
-def is_palindrome(sentence: str) -> bool:
-    sentence = sentence.lower().replace(" ", "").strip()
-    return sentence == sentence[::-1]
+# def is_palindrome(sentence: str) -> bool:
+#     sentence = sentence.lower().replace(" ", "").strip()
+#     return sentence == sentence[::-1]
 
 
-sentence = input()
-if is_palindrome(sentence):
-    print("yes")
-else:
-    print("no")
+# sentence = input()
+# if is_palindrome(sentence):
+#     print("yes")
+# else:
+#     print("no")
+
+
+n = int(input())
+nums = [float(input()) for _ in range(n)]
+
+
+def average(*nums):
+    avg = sum(nums) / len(nums)
+    print(f"{avg:.2f}")
+
+
+average(*nums)
