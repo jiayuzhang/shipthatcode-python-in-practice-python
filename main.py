@@ -83,12 +83,29 @@ from collections import defaultdict
 # for name, _ in lst:
 #     print(name)
 
-num1 = input()
-num2 = input()
+# num1 = input()
+# num2 = input()
+# try:
+#     result = int(num1) / int(num2)
+#     print(round(result, 2))
+# except ZeroDivisionError:
+#     print("cannot divide by zero")
+# except ValueError:
+#     print("invalid input")
+
+n = int(input())
+
+
+def validate_age(years):
+    if years < 0:
+        raise ValueError("age must be non-negative")
+    if years > 150:
+        raise ValueError("age too large")
+    return years
+
+
 try:
-    result = int(num1) / int(num2)
-    print(round(result, 2))
-except ZeroDivisionError:
-    print("cannot divide by zero")
-except ValueError:
-    print("invalid input")
+    validate_age(n)
+    print("age ok")
+except ValueError as e:
+    print(e)
