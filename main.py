@@ -83,10 +83,10 @@ from collections import defaultdict
 # for name, _ in lst:
 #     print(name)
 
-num1 = int(input())
-num2 = int(input())
+num1 = input()
+num2 = input()
 try:
-    print(f"{num1 / num2:.2f}")
+    print(f"{int(num1) / int(num2):.2f}")
 except ZeroDivisionError:
     print("cannot divide by zero")
 except ValueError:
