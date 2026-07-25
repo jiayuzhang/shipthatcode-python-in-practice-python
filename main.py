@@ -86,7 +86,8 @@ from collections import defaultdict
 num1 = input()
 num2 = input()
 try:
-    print(f"{int(num1) / int(num2):.2f}")
+    result = int(num1) / int(num2)
+    print(round(result, 2))
 except ZeroDivisionError:
     print("cannot divide by zero")
 except ValueError:
