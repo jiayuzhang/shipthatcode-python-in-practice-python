@@ -1,4 +1,5 @@
 from __future__ import annotations
+from collections import defaultdict
 
 # n = int(input())
 # nums = [int(input()) for _ in range(n)]
@@ -20,10 +21,21 @@ from __future__ import annotations
 # print(mn)
 # print(mx)
 
-text = input()
-tokens = text.split(" ")
-counter = {}
-for token in tokens:
-    counter[token] = counter.get(token, 0) + 1
-for key, value in counter.items():
-    print(key, value)
+# text = input()
+# tokens = text.split(" ")
+# counter = {}
+# for token in tokens:
+#     counter[token] = counter.get(token, 0) + 1
+# for key, value in counter.items():
+#     print(key, value)
+
+
+n = int(input())
+grades = defaultdict(list)
+for i in range(n):
+    text = input()  # Alice A
+    name, grade = text.split(" ")
+    grades[grade].append(name)
+
+for key, value in grades.items():
+    print(key + ":", ", ".join(value))
