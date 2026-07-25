@@ -112,13 +112,14 @@ import io
 #     print(e)
 
 lines = []
-lines.append(input())  # headers
+input()  # headers
 n = int(input())
 for _ in range(n):
     lines.append(input())
 csv_data = "\n".join(lines)
-reader = csv.DictReader(io.StringIO(csv_data))
+reader = csv.reader(io.StringIO(csv_data))
 tot = 0
 for row in reader:
-    tot += float(row["score"])
+    # print(row)
+    tot += float(row[-1])
 print(f"{tot / n:.2f}")
