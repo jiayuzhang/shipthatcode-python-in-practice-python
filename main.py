@@ -71,14 +71,23 @@ from collections import defaultdict
 
 # average(*nums)
 
-n = int(input())
-lst = []
-for _ in range(n):
-    text = input()
-    name, score = text.split(" ")
-    score = int(score)
-    lst.append((name, score))
+# n = int(input())
+# lst = []
+# for _ in range(n):
+#     text = input()
+#     name, score = text.split(" ")
+#     score = int(score)
+#     lst.append((name, score))
 
-lst.sort(key=lambda x: -x[1])
-for name, _ in lst:
-    print(name)
+# lst.sort(key=lambda x: -x[1])
+# for name, _ in lst:
+#     print(name)
+
+num1 = int(input())
+num2 = int(input())
+try:
+    print(f"{num1 / num2:.2f}")
+except ZeroDivisionError:
+    print("cannot divide by zero")
+except ValueError:
+    print("invalid input")
