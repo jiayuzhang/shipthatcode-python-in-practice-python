@@ -60,13 +60,25 @@ from collections import defaultdict
 #     print("no")
 
 
+# n = int(input())
+# nums = [float(input()) for _ in range(n)]
+
+
+# def average(*nums):
+#     avg = sum(nums) / len(nums)
+#     print(f"{avg:.2f}")
+
+
+# average(*nums)
+
 n = int(input())
-nums = [float(input()) for _ in range(n)]
+lst = []
+for _ in range(n):
+    text = input()
+    name, score = text.split(" ")
+    score = int(score)
+    lst.append((name, score))
 
-
-def average(*nums):
-    avg = sum(nums) / len(nums)
-    print(f"{avg:.2f}")
-
-
-average(*nums)
+lst.sort(key=lambda x: -x[1])
+for name, _ in lst:
+    print(name)
